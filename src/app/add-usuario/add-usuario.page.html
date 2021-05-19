@@ -4,8 +4,8 @@
       <ion-menu-button></ion-menu-button>
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title slot="end" *ngIf="!id">Novo Usuário</ion-title>
-    <ion-title slot="end" *ngIf="id">Editar Usuário</ion-title>
+    <ion-title slot="end" *ngIf="id<1">Novo Usuário</ion-title>
+    <ion-title slot="end" *ngIf="id>0">Editar Usuário</ion-title>
   </ion-toolbar>
 </ion-header>
 
