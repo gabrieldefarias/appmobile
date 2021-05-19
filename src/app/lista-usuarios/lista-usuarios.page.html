@@ -1,16 +1,18 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
       <ion-menu-button></ion-menu-button>
+      <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Listar Usuarios</ion-title>
-    <ion-button slot="end">
-      <ion-icon name="person-add"></ion-icon>
-    </ion-button>
+    <ion-title>Listar Usuários</ion-title>
+    <ion-buttons slot="primary" (click)="addUsuario()">
+      <ion-button>Novo
+        <ion-icon name="add" slot="end"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  
 </ion-content>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lista-usuarios',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaUsuariosPage implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
-  ngOnInit() {
+  ngOnInit() {}
+  
+  addUsuario() {
+    this.router.navigate(["add-usuario"]);
   }
 
 }

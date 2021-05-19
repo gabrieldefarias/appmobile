@@ -1,13 +1,37 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar color="secondary">
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
       <ion-menu-button></ion-menu-button>
+      <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Adicionar Usuario</ion-title>
+    <ion-title slot="end" *ngIf="!id">Novo Usuário</ion-title>
+    <ion-title slot="end" *ngIf="id">Editar Usuário</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <p>
+    Vamos realizar seu cadastro. <br>
+    Precisamos apenas de algumas informações.
+  </p>
+  <ion-list>
+    <p>Informações pessoais:</p>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="nome" placeholder="Nome completo:"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="email" placeholder="E-mail:"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="tel" [(ngModel)]="telefone" placeholder="Telfone:"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="cidade" placeholder="Cidade:"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="number" [(ngModel)]="cpf" placeholder="CPF:"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button *ngIf="id<1" expand="block" color="success" (click)="cadastrar()">Cadastrar</ion-button>
+  <ion-button *ngIf="id>0" expand="block" color="secondary" (click)="editar()">Atualizar</ion-button>
 </ion-content>
