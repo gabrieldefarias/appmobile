@@ -4,8 +4,8 @@
       <ion-menu-button></ion-menu-button>
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title slot="end" *ngIf="id<1">Novo Usuário</ion-title>
-    <ion-title slot="end" *ngIf="id>0">Editar Usuário</ion-title>
+    <ion-title slot="end" *ngIf="!id">Novo Usuário</ion-title>
+    <ion-title slot="end" *ngIf="id">Editar Usuário</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -32,6 +32,6 @@
       <ion-input type="number" [(ngModel)]="cpf" placeholder="CPF:"></ion-input>
     </ion-item>
   </ion-list>
-  <ion-button *ngIf="id<1" expand="block" color="success" (click)="cadastrar()">Cadastrar</ion-button>
-  <ion-button *ngIf="id>0" expand="block" color="secondary" (click)="editar()">Atualizar</ion-button>
+  <ion-button *ngIf="!id" expand="block" color="success" (click)="cadastrar()">Cadastrar</ion-button>
+  <ion-button *ngIf="id" expand="block" color="secondary" (click)="editar()">Atualizar</ion-button>
 </ion-content>
